@@ -46,816 +46,817 @@
     font-weight: bold;
 }
 </style>
-<h1>api-documentation for
+<h1>api documentation for
     <a
-        
+
     >cordova (v6.5.0)</a>
 </h1>
+<h4>Cordova command line interface tool</h4>
 <div class="apidocSectionDiv"><a
     href="#apidoc.tableOfContents"
     id="apidoc.tableOfContents"
 ><h1>table of contents</h1></a><ol>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova">module cordova</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.build">
             function <span class="apidocSignatureSpan">cordova.</span>build
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.clean">
             function <span class="apidocSignatureSpan">cordova.</span>clean
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cli">
             function <span class="apidocSignatureSpan">cordova.</span>cli
             <span class="apidocSignatureSpan">(inputArgs, cb)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.compile">
             function <span class="apidocSignatureSpan">cordova.</span>compile
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.CordovaError">
             function <span class="apidocSignatureSpan">cordova.</span>cordova_lib.CordovaError
             <span class="apidocSignatureSpan">(message, code, context)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.PluginInfo">
             function <span class="apidocSignatureSpan">cordova.</span>cordova_lib.PluginInfo
             <span class="apidocSignatureSpan">(dirname)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser">
             function <span class="apidocSignatureSpan">cordova.</span>cordova_lib.configparser
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.create">
             function <span class="apidocSignatureSpan">cordova.</span>create
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.emit">
             function <span class="apidocSignatureSpan">cordova.</span>emit
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.emulate">
             function <span class="apidocSignatureSpan">cordova.</span>emulate
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.findProjectRoot">
             function <span class="apidocSignatureSpan">cordova.</span>findProjectRoot
             <span class="apidocSignatureSpan">(opt_startDir)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.info">
             function <span class="apidocSignatureSpan">cordova.</span>info
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.off">
             function <span class="apidocSignatureSpan">cordova.</span>off
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.on">
             function <span class="apidocSignatureSpan">cordova.</span>on
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.platform">
             function <span class="apidocSignatureSpan">cordova.</span>platform
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.platforms">
             function <span class="apidocSignatureSpan">cordova.</span>platforms
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.plugin">
             function <span class="apidocSignatureSpan">cordova.</span>plugin
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.plugins">
             function <span class="apidocSignatureSpan">cordova.</span>plugins
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.prepare">
             function <span class="apidocSignatureSpan">cordova.</span>prepare
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.projectMetadata">
             function <span class="apidocSignatureSpan">cordova.</span>projectMetadata
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.removeAllListeners">
             function <span class="apidocSignatureSpan">cordova.</span>removeAllListeners
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.removeListener">
             function <span class="apidocSignatureSpan">cordova.</span>removeListener
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.requirements">
             function <span class="apidocSignatureSpan">cordova.</span>requirements
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.run">
             function <span class="apidocSignatureSpan">cordova.</span>run
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.targets">
             function <span class="apidocSignatureSpan">cordova.</span>targets
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.trigger">
             function <span class="apidocSignatureSpan">cordova.</span>trigger
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.</span>cordova_lib</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.</span>cordova_lib.CordovaError.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.</span>cordova_lib.configparser.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.</span>cordova_lib.events</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.</span>raw</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova.</span>binname</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova.cordova_lib">module cordova.cordova_lib</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.CordovaError">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>CordovaError
             <span class="apidocSignatureSpan">(message, code, context)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.PluginInfo">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>PluginInfo
             <span class="apidocSignatureSpan">(dirname)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>configparser
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.cordova_lib.</span>events</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova.cordova_lib.</span>binname</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova.cordova_lib.CordovaError">module cordova.cordova_lib.CordovaError</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.CordovaError.CordovaError">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>CordovaError
             <span class="apidocSignatureSpan">(message, code, context)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cordova.cordova_lib.CordovaError.</span>EXTERNAL_TOOL_ERROR</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cordova.cordova_lib.CordovaError.</span>UNKNOWN_ERROR</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova.cordova_lib.CordovaError.prototype">module cordova.cordova_lib.CordovaError.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.CordovaError.prototype.getErrorCodeName">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.CordovaError.prototype.</span>getErrorCodeName
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.CordovaError.prototype.toString">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.CordovaError.prototype.</span>toString
             <span class="apidocSignatureSpan">(isVerbose)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova.cordova_lib.PluginInfo">module cordova.cordova_lib.PluginInfo</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.PluginInfo.PluginInfo">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>PluginInfo
             <span class="apidocSignatureSpan">(dirname)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.PluginInfo.loadPluginsDir">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.PluginInfo.</span>loadPluginsDir
             <span class="apidocSignatureSpan">(dir)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova.cordova_lib.configparser">module cordova.cordova_lib.configparser</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.configparser">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>configparser
             <span class="apidocSignatureSpan">(path)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova.cordova_lib.configparser.prototype">module cordova.cordova_lib.configparser.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.addElement">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>addElement
             <span class="apidocSignatureSpan">(name, attributes)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.addEngine">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>addEngine
             <span class="apidocSignatureSpan">(name, spec)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.addPlugin">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>addPlugin
             <span class="apidocSignatureSpan">(attributes, variables)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.android_activityName">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>android_activityName
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.android_packageName">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>android_packageName
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.android_versionCode">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>android_versionCode
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.author">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>author
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.description">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>description
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAccesses">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAccesses
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAllowIntents">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAllowIntents
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAllowNavigations">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAllowNavigations
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAttribute">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAttribute
             <span class="apidocSignatureSpan">(attr)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getEditConfigs">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getEditConfigs
             <span class="apidocSignatureSpan">(platform)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getEngines">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getEngines
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getFileResources">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getFileResources
             <span class="apidocSignatureSpan">(platform)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getGlobalPreference">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getGlobalPreference
             <span class="apidocSignatureSpan">(name)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getHookScripts">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getHookScripts
             <span class="apidocSignatureSpan">(hook, platforms)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getIcons">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getIcons
             <span class="apidocSignatureSpan">(platform)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPlatformPreference">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPlatformPreference
             <span class="apidocSignatureSpan">(name, platform)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPlugin">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPlugin
             <span class="apidocSignatureSpan">(id)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPluginIdList">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPluginIdList
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPlugins">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPlugins
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPreference">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPreference
             <span class="apidocSignatureSpan">(name, platform)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getSplashScreens">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getSplashScreens
             <span class="apidocSignatureSpan">(platform)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getStaticResources">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getStaticResources
             <span class="apidocSignatureSpan">(platform, resourceName)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.ios_CFBundleIdentifier">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>ios_CFBundleIdentifier
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.ios_CFBundleVersion">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>ios_CFBundleVersion
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.name">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>name
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.packageName">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>packageName
             <span class="apidocSignatureSpan">(id)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.removeEngine">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>removeEngine
             <span class="apidocSignatureSpan">(name)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.removePlugin">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>removePlugin
             <span class="apidocSignatureSpan">(id)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setDescription">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setDescription
             <span class="apidocSignatureSpan">(text)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setGlobalPreference">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setGlobalPreference
             <span class="apidocSignatureSpan">(name, value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setName">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setName
             <span class="apidocSignatureSpan">(name)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setPackageName">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setPackageName
             <span class="apidocSignatureSpan">(id)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setVersion">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setVersion
             <span class="apidocSignatureSpan">(value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.version">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>version
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.windows_packageVersion">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>windows_packageVersion
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.configparser.prototype.write">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>write
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cordova.cordova_lib.events">module cordova.cordova_lib.events</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.events.emit">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>emit
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.cordova.cordova_lib.events.forwardEventsTo">
             function <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>forwardEventsTo
             <span class="apidocSignatureSpan">(eventEmitter)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>_eventsCount</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>_events</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>domain</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova" id="apidoc.module.cordova">module cordova</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.build" id="apidoc.element.cordova.build">
         function <span class="apidocSignatureSpan">cordova.</span>build
@@ -876,9 +877,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.clean" id="apidoc.element.cordova.clean">
         function <span class="apidocSignatureSpan">cordova.</span>clean
@@ -899,9 +900,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cli" id="apidoc.element.cordova.cli">
         function <span class="apidocSignatureSpan">cordova.</span>cli
@@ -910,14 +911,14 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">cli = function (inputArgs, cb) {
-    
+
 <span class="apidocCodeCommentSpan">    /**
      * mainly used for testing.
      */
 </span>    cb = cb || function(){};
-    
+
     init();
-    
+
     // If no inputArgs given, use process.argv.
     inputArgs = inputArgs || process.argv;
     var cmd = inputArgs[2]; // e.g: inputArgs= &#x27;node cordova run ios&#x27;
@@ -930,20 +931,20 @@
     } else if(!cmd || cmd === &#x27;--help&#x27; || cmd === &#x27;h&#x27;) {
         cmd = &#x27;help&#x27;;
     }
-            
+
     Q().then(function() {
-        
+
         /**
          * Skip telemetry prompt if:
          * - CI environment variable is present
          * - Command is run with `--no-telemetry` flag
          * - Command ran is: `cordova telemetry on | off | ...`
          */
-        
+
         if(telemetry.isCI(process.env) || telemetry.isNoTelemetryFlag(inputArgs)) {
             return Q(false);
         }
-        
+
         /**
          * We shouldn&#x27;t prompt for telemetry if user issues a command of the form: `cordova telemetry on | off | ...x`
          * Also, if the user has already been prompted and made a decision, use his saved answer
@@ -952,11 +953,11 @@
             var isOptedIn = telemetry.isOptedIn();
             return handleTelemetryCmd(subcommand, isOptedIn);
         }
-        
+
         if(telemetry.hasUserOptedInOrOut()) {
             return Q(telemetry.isOptedIn());
         }
-        
+
         /**
          * Otherwise, prompt user to opt-in or out
          * Note: the prompt is shown for 30 seconds. If no choice is made by that time, User is considered to have opted out.
@@ -985,9 +986,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.compile" id="apidoc.element.cordova.compile">
         function <span class="apidocSignatureSpan">cordova.</span>compile
@@ -1008,9 +1009,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.CordovaError" id="apidoc.element.cordova.cordova_lib.CordovaError">
         function <span class="apidocSignatureSpan">cordova.</span>cordova_lib.CordovaError
@@ -1027,9 +1028,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.PluginInfo" id="apidoc.element.cordova.cordova_lib.PluginInfo">
         function <span class="apidocSignatureSpan">cordova.</span>cordova_lib.PluginInfo
@@ -1178,9 +1179,9 @@
         // Filter out any undefined or empty strings. ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser" id="apidoc.element.cordova.cordova_lib.configparser">
         function <span class="apidocSignatureSpan">cordova.</span>cordova_lib.configparser
@@ -1205,9 +1206,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.create" id="apidoc.element.cordova.create">
         function <span class="apidocSignatureSpan">cordova.</span>create
@@ -1228,9 +1229,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.emit" id="apidoc.element.cordova.emit">
         function <span class="apidocSignatureSpan">cordova.</span>emit
@@ -1243,9 +1244,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.emulate" id="apidoc.element.cordova.emulate">
         function <span class="apidocSignatureSpan">cordova.</span>emulate
@@ -1266,9 +1267,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.findProjectRoot" id="apidoc.element.cordova.findProjectRoot">
         function <span class="apidocSignatureSpan">cordova.</span>findProjectRoot
@@ -1281,9 +1282,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.info" id="apidoc.element.cordova.info">
         function <span class="apidocSignatureSpan">cordova.</span>info
@@ -1304,9 +1305,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.off" id="apidoc.element.cordova.off">
         function <span class="apidocSignatureSpan">cordova.</span>off
@@ -1319,9 +1320,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.on" id="apidoc.element.cordova.on">
         function <span class="apidocSignatureSpan">cordova.</span>on
@@ -1334,9 +1335,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.platform" id="apidoc.element.cordova.platform">
         function <span class="apidocSignatureSpan">cordova.</span>platform
@@ -1357,9 +1358,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.platforms" id="apidoc.element.cordova.platforms">
         function <span class="apidocSignatureSpan">cordova.</span>platforms
@@ -1380,9 +1381,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.plugin" id="apidoc.element.cordova.plugin">
         function <span class="apidocSignatureSpan">cordova.</span>plugin
@@ -1403,9 +1404,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.plugins" id="apidoc.element.cordova.plugins">
         function <span class="apidocSignatureSpan">cordova.</span>plugins
@@ -1426,9 +1427,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.prepare" id="apidoc.element.cordova.prepare">
         function <span class="apidocSignatureSpan">cordova.</span>prepare
@@ -1449,9 +1450,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.projectMetadata" id="apidoc.element.cordova.projectMetadata">
         function <span class="apidocSignatureSpan">cordova.</span>projectMetadata
@@ -1472,9 +1473,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.removeAllListeners" id="apidoc.element.cordova.removeAllListeners">
         function <span class="apidocSignatureSpan">cordova.</span>removeAllListeners
@@ -1487,9 +1488,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.removeListener" id="apidoc.element.cordova.removeListener">
         function <span class="apidocSignatureSpan">cordova.</span>removeListener
@@ -1502,9 +1503,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.requirements" id="apidoc.element.cordova.requirements">
         function <span class="apidocSignatureSpan">cordova.</span>requirements
@@ -1525,9 +1526,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.run" id="apidoc.element.cordova.run">
         function <span class="apidocSignatureSpan">cordova.</span>run
@@ -1548,9 +1549,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.targets" id="apidoc.element.cordova.targets">
         function <span class="apidocSignatureSpan">cordova.</span>targets
@@ -1571,9 +1572,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.trigger" id="apidoc.element.cordova.trigger">
         function <span class="apidocSignatureSpan">cordova.</span>trigger
@@ -1586,26 +1587,26 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova.cordova_lib" id="apidoc.module.cordova.cordova_lib">module cordova.cordova_lib</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.CordovaError" id="apidoc.element.cordova.cordova_lib.CordovaError">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>CordovaError
@@ -1622,9 +1623,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.PluginInfo" id="apidoc.element.cordova.cordova_lib.PluginInfo">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>PluginInfo
@@ -1773,9 +1774,9 @@
         // Filter out any undefined or empty strings. ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser" id="apidoc.element.cordova.cordova_lib.configparser">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>configparser
@@ -1800,18 +1801,18 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova.cordova_lib.CordovaError" id="apidoc.module.cordova.cordova_lib.CordovaError">module cordova.cordova_lib.CordovaError</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.CordovaError.CordovaError" id="apidoc.element.cordova.cordova_lib.CordovaError.CordovaError">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>CordovaError
@@ -1828,18 +1829,18 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova.cordova_lib.CordovaError.prototype" id="apidoc.module.cordova.cordova_lib.CordovaError.prototype">module cordova.cordova_lib.CordovaError.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.CordovaError.prototype.getErrorCodeName" id="apidoc.element.cordova.cordova_lib.CordovaError.prototype.getErrorCodeName">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.CordovaError.prototype.</span>getErrorCodeName
@@ -1858,9 +1859,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.CordovaError.prototype.toString" id="apidoc.element.cordova.cordova_lib.CordovaError.prototype.toString">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.CordovaError.prototype.</span>toString
@@ -1894,14 +1895,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova.cordova_lib.PluginInfo" id="apidoc.module.cordova.cordova_lib.PluginInfo">module cordova.cordova_lib.PluginInfo</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.PluginInfo.PluginInfo" id="apidoc.element.cordova.cordova_lib.PluginInfo.PluginInfo">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>PluginInfo
@@ -2050,9 +2051,9 @@
         // Filter out any undefined or empty strings. ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.PluginInfo.loadPluginsDir" id="apidoc.element.cordova.cordova_lib.PluginInfo.loadPluginsDir">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.PluginInfo.</span>loadPluginsDir
@@ -2066,14 +2067,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova.cordova_lib.configparser" id="apidoc.module.cordova.cordova_lib.configparser">module cordova.cordova_lib.configparser</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.configparser" id="apidoc.element.cordova.cordova_lib.configparser.configparser">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.</span>configparser
@@ -2098,14 +2099,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova.cordova_lib.configparser.prototype" id="apidoc.module.cordova.cordova_lib.configparser.prototype">module cordova.cordova_lib.configparser.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.addElement" id="apidoc.element.cordova.cordova_lib.configparser.prototype.addElement">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>addElement
@@ -2122,9 +2123,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.addEngine" id="apidoc.element.cordova.cordova_lib.configparser.prototype.addEngine">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>addEngine
@@ -2143,9 +2144,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.addPlugin" id="apidoc.element.cordova.cordova_lib.configparser.prototype.addPlugin">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>addPlugin
@@ -2178,9 +2179,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.android_activityName" id="apidoc.element.cordova.cordova_lib.configparser.prototype.android_activityName">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>android_activityName
@@ -2193,9 +2194,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.android_packageName" id="apidoc.element.cordova.cordova_lib.configparser.prototype.android_packageName">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>android_packageName
@@ -2208,9 +2209,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.android_versionCode" id="apidoc.element.cordova.cordova_lib.configparser.prototype.android_versionCode">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>android_versionCode
@@ -2223,9 +2224,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.author" id="apidoc.element.cordova.cordova_lib.configparser.prototype.author">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>author
@@ -2238,9 +2239,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.description" id="apidoc.element.cordova.cordova_lib.configparser.prototype.description">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>description
@@ -2253,9 +2254,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAccesses" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getAccesses">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAccesses
@@ -2272,7 +2273,7 @@
         var allows_arbitrary_loads_in_web_content = access.attrib[&#x27;allows-arbitrary-loads-in-web-content&#x27;]; /* Boolean */
         var allows_arbitrary_loads_in_media = access.attrib[&#x27;allows-arbitrary-loads-in-media&#x27;]; /* Boolean */
         var allows_local_networking = access.attrib[&#x27;allows-local-networking&#x27;]; /* Boolean */
-        
+
         return {
             &#x27;origin&#x27;: access.attrib.origin,
             &#x27;minimum_tls_version&#x27;: minimum_tls_version,
@@ -2286,9 +2287,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAllowIntents" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getAllowIntents">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAllowIntents
@@ -2306,9 +2307,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAllowNavigations" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getAllowNavigations">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAllowNavigations
@@ -2333,9 +2334,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getAttribute" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getAttribute">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getAttribute
@@ -2348,9 +2349,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getEditConfigs" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getEditConfigs">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getEditConfigs
@@ -2378,9 +2379,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getEngines" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getEngines">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getEngines
@@ -2400,9 +2401,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getFileResources" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getFileResources">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getFileResources
@@ -2430,9 +2431,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getGlobalPreference" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getGlobalPreference">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getGlobalPreference
@@ -2445,9 +2446,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getHookScripts" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getHookScripts">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getHookScripts
@@ -2473,9 +2474,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getIcons" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getIcons">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getIcons
@@ -2488,9 +2489,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPlatformPreference" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getPlatformPreference">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPlatformPreference
@@ -2503,9 +2504,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPlugin" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getPlugin">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPlugin
@@ -2543,9 +2544,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPluginIdList" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getPluginIdList">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPluginIdList
@@ -2569,9 +2570,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPlugins" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getPlugins">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPlugins
@@ -2586,9 +2587,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getPreference" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getPreference">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getPreference
@@ -2609,9 +2610,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getSplashScreens" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getSplashScreens">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getSplashScreens
@@ -2624,9 +2625,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.getStaticResources" id="apidoc.element.cordova.cordova_lib.configparser.prototype.getStaticResources">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>getStaticResources
@@ -2699,9 +2700,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.ios_CFBundleIdentifier" id="apidoc.element.cordova.cordova_lib.configparser.prototype.ios_CFBundleIdentifier">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>ios_CFBundleIdentifier
@@ -2714,9 +2715,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.ios_CFBundleVersion" id="apidoc.element.cordova.cordova_lib.configparser.prototype.ios_CFBundleVersion">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>ios_CFBundleVersion
@@ -2729,9 +2730,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.name" id="apidoc.element.cordova.cordova_lib.configparser.prototype.name">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>name
@@ -2744,9 +2745,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.packageName" id="apidoc.element.cordova.cordova_lib.configparser.prototype.packageName">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>packageName
@@ -2759,9 +2760,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.removeEngine" id="apidoc.element.cordova.cordova_lib.configparser.prototype.removeEngine">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>removeEngine
@@ -2781,9 +2782,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.removePlugin" id="apidoc.element.cordova.cordova_lib.configparser.prototype.removePlugin">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>removePlugin
@@ -2806,9 +2807,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setDescription" id="apidoc.element.cordova.cordova_lib.configparser.prototype.setDescription">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setDescription
@@ -2822,9 +2823,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setGlobalPreference" id="apidoc.element.cordova.cordova_lib.configparser.prototype.setGlobalPreference">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setGlobalPreference
@@ -2843,9 +2844,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setName" id="apidoc.element.cordova.cordova_lib.configparser.prototype.setName">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setName
@@ -2859,9 +2860,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setPackageName" id="apidoc.element.cordova.cordova_lib.configparser.prototype.setPackageName">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setPackageName
@@ -2874,9 +2875,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.setVersion" id="apidoc.element.cordova.cordova_lib.configparser.prototype.setVersion">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>setVersion
@@ -2889,9 +2890,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.version" id="apidoc.element.cordova.cordova_lib.configparser.prototype.version">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>version
@@ -2904,9 +2905,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.windows_packageVersion" id="apidoc.element.cordova.cordova_lib.configparser.prototype.windows_packageVersion">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>windows_packageVersion
@@ -2919,9 +2920,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.configparser.prototype.write" id="apidoc.element.cordova.cordova_lib.configparser.prototype.write">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.configparser.prototype.</span>write
@@ -2934,14 +2935,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.cordova.cordova_lib.events" id="apidoc.module.cordova.cordova_lib.events">module cordova.cordova_lib.events</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.events.emit" id="apidoc.element.cordova.cordova_lib.events.emit">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>emit
@@ -2961,9 +2962,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.cordova.cordova_lib.events.forwardEventsTo" id="apidoc.element.cordova.cordova_lib.events.forwardEventsTo">
         function <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>forwardEventsTo
@@ -2993,14 +2994,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocFooterDiv">
