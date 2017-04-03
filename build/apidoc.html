@@ -325,6 +325,12 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova.</span>telemetry</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova.</span>binname</span>
 
         </li>
@@ -851,6 +857,91 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova.telemetry">module cordova.telemetry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.clear">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.hasUserOptedInOrOut">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>hasUserOptedInOrOut
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.isCI">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>isCI
+            <span class="apidocSignatureSpan">(env)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.isNoTelemetryFlag">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>isNoTelemetryFlag
+            <span class="apidocSignatureSpan">(args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.isOptedIn">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>isOptedIn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.showPrompt">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>showPrompt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.track">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>track
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.turnOff">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOff
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova.telemetry.turnOn">
+            function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -1227,7 +1318,23 @@
         val.apply(module.exports, arguments).done(null, function(err) { throw err; });
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var cfg = {},
+        customWww;
+
+    // parseConfig will determine if there&#x27;s a valid config JSON string
+    cfg = this.parseConfig(undashed[4]);
+
+    // create(dir, id, name, cfg)
+    cordova.raw.<span class="apidocCodeKeywordSpan">create</span>(undashed[1] , // dir to create the project in
+                       undashed[2] , // App id
+                       undashed[3] , // App name
+                       cfg
+    ).done();
+};
+
+/**
+...</pre></li>
     </ul>
 
 
@@ -1242,7 +1349,18 @@
     <li>description and source-code<pre class="apidocCodePre">emit = function () {
     cordova_events.emit.apply(cordova_events, arguments);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+           return f;
+        }
+        return null;
+    }).filter(function (f) {
+        return f !== null;
+    });
+    raw = fs.readFileSync(file[0]).toString(&#x27;utf8&#x27;).replace(/cordova-cli/g, cordova_lib.binname);
+    cordova.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;results&#x27;, raw);
+    return Q();
+};
+...</pre></li>
     </ul>
 
 
@@ -1601,6 +1719,8 @@
 
 
 
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -1893,7 +2013,20 @@
 
     return message;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (fs.existsSync(f)) {
+           return f;
+        }
+        return null;
+    }).filter(function (f) {
+        return f !== null;
+    });
+    raw = fs.readFileSync(file[0]).<span class="apidocCodeKeywordSpan">toString</span>(&#x27;utf8&#x27;).replace(/cordova-cli/g,
+cordova_lib.binname);
+    cordova.emit(&#x27;results&#x27;, raw);
+    return Q();
+};
+...</pre></li>
     </ul>
 
 
@@ -2960,7 +3093,18 @@
 
     return emit.apply(this, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+           return f;
+        }
+        return null;
+    }).filter(function (f) {
+        return f !== null;
+    });
+    raw = fs.readFileSync(file[0]).toString(&#x27;utf8&#x27;).replace(/cordova-cli/g, cordova_lib.binname);
+    cordova.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;results&#x27;, raw);
+    return Q();
+};
+...</pre></li>
     </ul>
 
 
@@ -3000,6 +3144,172 @@
 
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova.telemetry" id="apidoc.module.cordova.telemetry">module cordova.telemetry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.clear" id="apidoc.element.cordova.telemetry.clear">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clear() {
+    insight.optOut = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.hasUserOptedInOrOut" id="apidoc.element.cordova.telemetry.hasUserOptedInOrOut">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>hasUserOptedInOrOut
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasUserOptedInOrOut() {
+    var insightOptOut = insight.optOut === undefined;
+    return !(insightOptOut);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.isCI" id="apidoc.element.cordova.telemetry.isCI">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>isCI
+        <span class="apidocSignatureSpan">(env)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isCI(env) {
+    return !!env.CI;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.isNoTelemetryFlag" id="apidoc.element.cordova.telemetry.isNoTelemetryFlag">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>isNoTelemetryFlag
+        <span class="apidocSignatureSpan">(args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNoTelemetryFlag(args) {
+    return args.indexOf(&#x27;--no-telemetry&#x27;) &#x3e; -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.isOptedIn" id="apidoc.element.cordova.telemetry.isOptedIn">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>isOptedIn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isOptedIn() {
+    return !insight.optOut;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.showPrompt" id="apidoc.element.cordova.telemetry.showPrompt">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>showPrompt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function showPrompt() {
+
+    var deferred = Q.defer();
+
+    var msg = &#x27;May Cordova anonymously report usage statistics to improve the tool over time?&#x27;;
+    insight.askPermission(msg, function (unused, optIn) {
+        var EOL = require(&#x27;os&#x27;).EOL;
+        if (optIn) {
+            console.log(EOL + &#x27;Thanks for opting into telemetry to help us improve cordova.&#x27;);
+            track(&#x27;telemetry&#x27;, &#x27;on&#x27;, &#x27;via-cli-prompt-choice&#x27;, &#x27;successful&#x27;);
+        } else {
+            console.log(EOL + &#x27;You have been opted out of telemetry. To change this, run: cordova telemetry on.&#x27;);
+            // Always track telemetry opt-outs! (whether opted-in or opted-out)
+            track(&#x27;telemetry&#x27;, &#x27;off&#x27;, &#x27;via-cli-prompt-choice&#x27;, &#x27;successful&#x27;);
+        }
+
+        deferred.resolve(optIn);
+    });
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.track" id="apidoc.element.cordova.telemetry.track">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>track
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function track() {
+    // Remove empty, null or undefined strings from arguments
+    for (var property in arguments) {
+        var val = arguments[property];
+        if (!val || val.length === 0) {
+            delete arguments.property;
+        }
+    }
+    insight.track.apply(insight, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.turnOff" id="apidoc.element.cordova.telemetry.turnOff">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOff
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function turnOff() {
+    insight.optOut = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova.telemetry.turnOn" id="apidoc.element.cordova.telemetry.turnOn">
+        function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function turnOn() {
+    insight.optOut = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 </div>
