@@ -1,11 +1,13 @@
-# api documentation for  cordova (v6.5.0)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cordova.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cordova)
+# api documentation for  cordova (v6.5.0)  [![npm package](https://img.shields.io/npm/v/npmdoc-cordova.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cordova) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cordova.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cordova)
 #### Cordova command line interface tool
 
 [![NPM](https://nodei.co/npm/cordova.png?downloads=true)](https://www.npmjs.com/package/cordova)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-cordova/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-cordova_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-cordova/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-cordova/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-cordova_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-cordova/build..beta..travis-ci.org/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-cordova/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-cordova/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-cordova/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -14,15 +16,52 @@
 ```json
 
 {
-    "author": {
-        "name": "Anis Kadri"
+    "name": "cordova",
+    "version": "6.5.0",
+    "preferGlobal": "true",
+    "description": "Cordova command line interface tool",
+    "main": "cordova",
+    "engines": {
+        "node": ">=4.0.0"
     },
     "bin": {
         "cordova": "./bin/cordova"
     },
+    "scripts": {
+        "test": "npm run jshint && npm run jasmine",
+        "jshint": "jshint spec && jshint src",
+        "cover": "istanbul cover --root src --print detail jasmine",
+        "jasmine": "jasmine --captureExceptions --color"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://git-wip-us.apache.org/repos/asf/cordova-cli.git"
+    },
     "bugs": {
         "url": "https://issues.apache.org/jira/browse/CB",
         "email": "dev@cordova.apache.org"
+    },
+    "keywords": [
+        "cordova",
+        "client",
+        "cli"
+    ],
+    "dependencies": {
+        "cordova-common": "2.0.0",
+        "cordova-lib": "6.5.0",
+        "insight": "~0.8.2",
+        "nopt": "3.0.1",
+        "q": "1.0.1",
+        "underscore": "1.7.0",
+        "update-notifier": "^0.5.0"
+    },
+    "devDependencies": {
+        "jasmine": "^2.5.2",
+        "istanbul": "^0.4.5",
+        "jshint": "^2.9.4"
+    },
+    "author": {
+        "name": "Anis Kadri"
     },
     "contributors": [
         {
@@ -122,36 +161,11 @@
             "email": "purplecabbage@gmail.com"
         }
     ],
-    "dependencies": {
-        "cordova-common": "2.0.0",
-        "cordova-lib": "6.5.0",
-        "insight": "~0.8.2",
-        "nopt": "3.0.1",
-        "q": "1.0.1",
-        "underscore": "1.7.0",
-        "update-notifier": "^0.5.0"
-    },
-    "description": "Cordova command line interface tool",
-    "devDependencies": {
-        "istanbul": "^0.4.5",
-        "jasmine": "^2.5.2",
-        "jshint": "^2.9.4"
-    },
-    "directories": {},
+    "license": "Apache-2.0",
     "dist": {
         "shasum": "e6ec81b17dd50c17c40b4b87330f7ced38fb0b47",
         "tarball": "https://registry.npmjs.org/cordova/-/cordova-6.5.0.tgz"
     },
-    "engines": {
-        "node": ">=4.0.0"
-    },
-    "keywords": [
-        "cordova",
-        "client",
-        "cli"
-    ],
-    "license": "Apache-2.0",
-    "main": "cordova",
     "maintainers": [
         {
             "name": "agrieve",
@@ -230,21 +244,8 @@
             "email": "npmjs@barhams.info"
         }
     ],
-    "name": "cordova",
-    "optionalDependencies": {},
-    "preferGlobal": "true",
-    "readme": "ERROR: No README data found!",
-    "repository": {
-        "type": "git",
-        "url": "https://git-wip-us.apache.org/repos/asf/cordova-cli.git"
-    },
-    "scripts": {
-        "cover": "istanbul cover --root src --print detail jasmine",
-        "jasmine": "jasmine --captureExceptions --color",
-        "jshint": "jshint spec && jshint src",
-        "test": "npm run jshint && npm run jasmine"
-    },
-    "version": "6.5.0"
+    "directories": {},
+    "readme": "ERROR: No README data found!"
 }
 ```
 
@@ -284,6 +285,7 @@
 1.  object <span class="apidocSignatureSpan">cordova.</span>cordova_lib.configparser.prototype
 1.  object <span class="apidocSignatureSpan">cordova.</span>cordova_lib.events
 1.  object <span class="apidocSignatureSpan">cordova.</span>raw
+1.  object <span class="apidocSignatureSpan">cordova.</span>telemetry
 1.  string <span class="apidocSignatureSpan">cordova.</span>binname
 
 #### [module cordova.cordova_lib](#apidoc.module.cordova.cordova_lib)
@@ -356,6 +358,17 @@
 1.  number <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>_eventsCount
 1.  object <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>_events
 1.  object <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>domain
+
+#### [module cordova.telemetry](#apidoc.module.cordova.telemetry)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>clear ()](#apidoc.element.cordova.telemetry.clear)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>hasUserOptedInOrOut ()](#apidoc.element.cordova.telemetry.hasUserOptedInOrOut)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>isCI (env)](#apidoc.element.cordova.telemetry.isCI)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>isNoTelemetryFlag (args)](#apidoc.element.cordova.telemetry.isNoTelemetryFlag)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>isOptedIn ()](#apidoc.element.cordova.telemetry.isOptedIn)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>showPrompt ()](#apidoc.element.cordova.telemetry.showPrompt)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>track ()](#apidoc.element.cordova.telemetry.track)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOff ()](#apidoc.element.cordova.telemetry.turnOff)
+1.  [function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOn ()](#apidoc.element.cordova.telemetry.turnOn)
 
 
 
@@ -709,7 +722,23 @@ create = function () {
 ```
 - example usage
 ```shell
-n/a
+...
+    var cfg = {},
+        customWww;
+
+    // parseConfig will determine if there's a valid config JSON string
+    cfg = this.parseConfig(undashed[4]);
+
+    // create(dir, id, name, cfg)
+    cordova.raw.create(undashed[1] , // dir to create the project in
+                       undashed[2] , // App id
+                       undashed[3] , // App name
+                       cfg
+    ).done();
+};
+
+/**
+...
 ```
 
 #### <a name="apidoc.element.cordova.emit"></a>[function <span class="apidocSignatureSpan">cordova.</span>emit ()](#apidoc.element.cordova.emit)
@@ -721,7 +750,18 @@ emit = function () {
 ```
 - example usage
 ```shell
-n/a
+...
+           return f;
+        }
+        return null;
+    }).filter(function (f) {
+        return f !== null;
+    });
+    raw = fs.readFileSync(file[0]).toString('utf8').replace(/cordova-cli/g, cordova_lib.binname);
+    cordova.emit('results', raw);
+    return Q();
+};
+...
 ```
 
 #### <a name="apidoc.element.cordova.emulate"></a>[function <span class="apidocSignatureSpan">cordova.</span>emulate ()](#apidoc.element.cordova.emulate)
@@ -1280,7 +1320,19 @@ toString = function (isVerbose) {
 ```
 - example usage
 ```shell
-n/a
+...
+        if (fs.existsSync(f)) {
+           return f;
+        }
+        return null;
+    }).filter(function (f) {
+        return f !== null;
+    });
+    raw = fs.readFileSync(file[0]).toString('utf8').replace(/cordova-cli/g, cordova_lib.binname);
+    cordova.emit('results', raw);
+    return Q();
+};
+...
 ```
 
 
@@ -2214,7 +2266,18 @@ emit = function () {
 ```
 - example usage
 ```shell
-n/a
+...
+           return f;
+        }
+        return null;
+    }).filter(function (f) {
+        return f !== null;
+    });
+    raw = fs.readFileSync(file[0]).toString('utf8').replace(/cordova-cli/g, cordova_lib.binname);
+    cordova.emit('results', raw);
+    return Q();
+};
+...
 ```
 
 #### <a name="apidoc.element.cordova.cordova_lib.events.forwardEventsTo"></a>[function <span class="apidocSignatureSpan">cordova.cordova_lib.events.</span>forwardEventsTo (eventEmitter)](#apidoc.element.cordova.cordova_lib.events.forwardEventsTo)
@@ -2239,6 +2302,144 @@ forwardEventsTo = function (eventEmitter) {
         // Reset forwarding if we are subscribing to self
         EVENTS_RECEIVER = undefined;
     }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+
+
+# <a name="apidoc.module.cordova.telemetry"></a>[module cordova.telemetry](#apidoc.module.cordova.telemetry)
+
+#### <a name="apidoc.element.cordova.telemetry.clear"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>clear ()](#apidoc.element.cordova.telemetry.clear)
+- description and source-code
+```javascript
+function clear() {
+    insight.optOut = undefined;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.hasUserOptedInOrOut"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>hasUserOptedInOrOut ()](#apidoc.element.cordova.telemetry.hasUserOptedInOrOut)
+- description and source-code
+```javascript
+function hasUserOptedInOrOut() {
+    var insightOptOut = insight.optOut === undefined;
+    return !(insightOptOut);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.isCI"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>isCI (env)](#apidoc.element.cordova.telemetry.isCI)
+- description and source-code
+```javascript
+function isCI(env) {
+    return !!env.CI;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.isNoTelemetryFlag"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>isNoTelemetryFlag (args)](#apidoc.element.cordova.telemetry.isNoTelemetryFlag)
+- description and source-code
+```javascript
+function isNoTelemetryFlag(args) {
+    return args.indexOf('--no-telemetry') > -1;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.isOptedIn"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>isOptedIn ()](#apidoc.element.cordova.telemetry.isOptedIn)
+- description and source-code
+```javascript
+function isOptedIn() {
+    return !insight.optOut;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.showPrompt"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>showPrompt ()](#apidoc.element.cordova.telemetry.showPrompt)
+- description and source-code
+```javascript
+function showPrompt() {
+
+    var deferred = Q.defer();
+
+    var msg = 'May Cordova anonymously report usage statistics to improve the tool over time?';
+    insight.askPermission(msg, function (unused, optIn) {
+        var EOL = require('os').EOL;
+        if (optIn) {
+            console.log(EOL + 'Thanks for opting into telemetry to help us improve cordova.');
+            track('telemetry', 'on', 'via-cli-prompt-choice', 'successful');
+        } else {
+            console.log(EOL + 'You have been opted out of telemetry. To change this, run: cordova telemetry on.');
+            // Always track telemetry opt-outs! (whether opted-in or opted-out)
+            track('telemetry', 'off', 'via-cli-prompt-choice', 'successful');
+        }
+
+        deferred.resolve(optIn);
+    });
+
+    return deferred.promise;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.track"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>track ()](#apidoc.element.cordova.telemetry.track)
+- description and source-code
+```javascript
+function track() {
+    // Remove empty, null or undefined strings from arguments
+    for (var property in arguments) {
+        var val = arguments[property];
+        if (!val || val.length === 0) {
+            delete arguments.property;
+        }
+    }
+    insight.track.apply(insight, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.turnOff"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOff ()](#apidoc.element.cordova.telemetry.turnOff)
+- description and source-code
+```javascript
+function turnOff() {
+    insight.optOut = true;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.cordova.telemetry.turnOn"></a>[function <span class="apidocSignatureSpan">cordova.telemetry.</span>turnOn ()](#apidoc.element.cordova.telemetry.turnOn)
+- description and source-code
+```javascript
+function turnOn() {
+    insight.optOut = false;
 }
 ```
 - example usage
