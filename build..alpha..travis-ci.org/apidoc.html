@@ -1319,21 +1319,21 @@
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    var cfg = {},
-        customWww;
+                logger.warn(&#x27;Warning: --copy-from option is being deprecated. Consider using --template instead.&#x27;);
+                wwwCfg.template = true;
+            }
 
-    // parseConfig will determine if there&#x27;s a valid config JSON string
-    cfg = this.parseConfig(undashed[4]);
-
-    // create(dir, id, name, cfg)
-    cordova.raw.<span class="apidocCodeKeywordSpan">create</span>(undashed[1] , // dir to create the project in
-                       undashed[2] , // App id
-                       undashed[3] , // App name
-                       cfg
-    ).done();
-};
-
-/**
+            cfg.lib = cfg.lib || {};
+            cfg.lib.www = wwwCfg;
+        }
+        return cordova.raw.<span class="apidocCodeKeywordSpan">create</span>( undashed[1]  // dir to create the project in
+            , undashed[2]  // App id
+            , undashed[3]  // App name
+            , cfg
+            , events || undefined
+        );
+    }
+}
 ...</pre></li>
     </ul>
 
@@ -1350,16 +1350,22 @@
     cordova_events.emit.apply(cordova_events, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-           return f;
+            throw new CordovaError(msg);
         }
-        return null;
-    }).filter(function (f) {
-        return f !== null;
-    });
-    raw = fs.readFileSync(file[0]).toString(&#x27;utf8&#x27;).replace(/cordova-cli/g, cordova_lib.binname);
-    cordova.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;results&#x27;, raw);
-    return Q();
-};
+
+        return cordova.raw[cmd].call(null, opts.platforms)
+            .then(function(platformChecks) {
+
+                var someChecksFailed = Object.keys(platformChecks).map(function(platformName) {
+events.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;log&#x27;, &#x27;\nRequirements check results for &#x27; + platformName
+ + &#x27;:&#x27;);
+var platformCheck = platformChecks[platformName];
+if (platformCheck instanceof CordovaError) {
+    events.emit(&#x27;warn&#x27;, &#x27;Check failed for &#x27; + platformName + &#x27; due to &#x27; + platformCheck);
+    return true;
+}
+
+var someChecksFailed = false;
 ...</pre></li>
     </ul>
 
@@ -1398,7 +1404,25 @@
     <li>description and source-code<pre class="apidocCodePre">findProjectRoot = function (opt_startDir) {
     return cordova_util.isCordova(opt_startDir);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* [CB-3612](https://issues.apache.org/jira/browse/CB-3612) Don&#x27;t pass --device to &#x22;run&#x22; command by default.
+* [CB-5493](https://issues.apache.org/jira/browse/CB-5493) lazy_load now downloads to a temp dir and then moves.
+* [CB-5782](https://issues.apache.org/jira/browse/CB-5782) Hide stack trace for explicitly handled error conditions
+* [CB-5590](https://issues.apache.org/jira/browse/CB-5590) Have config.xml version map to CFBundleShortVersionString instead of
+CFBundleVersion
+* [CB-5299](https://issues.apache.org/jira/browse/CB-5299) Cache pbxproj to avoid re-parsing it for each plugin.
+* [CB-5813](https://issues.apache.org/jira/browse/CB-5813) Fix missing quotes on update and ls commands
+* [CB-5808](https://issues.apache.org/jira/browse/CB-5808) Fix lazy_load stripping off windows drive letters
+* Expose util.isCordova as cordova.<span class="apidocCodeKeywordSpan">findProjectRoot</span>()
+* Allow lazy_load libs to work without an id and version for local paths.
+* Add an option to config.js to not write config.json during create.
+* Update node-xcode dependency to 0.6.6
+
+## 3.3.1-0.2.0 (Jan 15, 2014)
+* [CB-5006](https://issues.apache.org/jira/browse/CB-5006) Add --searchpath to &#x22;plugin add&#x22; so that installing by ID will
+ search local paths before hitting the registry.
+* [CB-4153](https://issues.apache.org/jira/browse/CB-4153) Add --src &#x26; --link to cordova create.
+...</pre></li>
     </ul>
 
 
@@ -1451,7 +1475,23 @@
     <li>description and source-code<pre class="apidocCodePre">on = function () {
     cordova_events.on.apply(cordova_events, arguments);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Set this to 1 to enable timestamp collection via addTs().
+if (0) {
+var ts = [];
+addTs = function(name) {
+    ts.push([name, new Date]);
+}
+process.<span class="apidocCodeKeywordSpan">on</span>(&#x27;exit&#x27;, function() {
+    for (var i = 0; i &#x3c; ts.length - 1; ++i) {
+      var e1 = ts[i];
+      var e2 = ts[i+1];
+      console.log(e1[0] + &#x27; -&#x3e; &#x27; + e2[0] + &#x27; = &#x27; + (e2[1] - e1[1]));
+    }
+    console.log(&#x27;total: &#x27; + (ts[ts.length-1][1] - ts[0][1]));
+});
+...</pre></li>
     </ul>
 
 
@@ -1604,7 +1644,24 @@
     <li>description and source-code<pre class="apidocCodePre">removeAllListeners = function () {
     cordova_events.removeAllListeners.apply(cordova_events, arguments);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Added browserify flag to cli options
+* checking for browserify flag
+* [CB-7220](https://issues.apache.org/jira/browse/CB-7220) Support cordova_lib.binname
+* [CB-7220](https://issues.apache.org/jira/browse/CB-7220) Split cordova help into per feature help files
+* [CB-6756](https://issues.apache.org/jira/browse/CB-6756) Adds the platforms subcommand for save and restore
+* [CB-7100](https://issues.apache.org/jira/browse/CB-7100): Use npm based lazy-load by default
+* [CB-6127](https://issues.apache.org/jira/browse/CB-6127)lisa7cordova-plugin-consolecordova-cli documentation translation: cordova
+-cli
+* Call process.<span class="apidocCodeKeywordSpan">removeAllListeners</span>() in cli spec
+* Add --captureExceptions flag to jasmine
+* Pin jasmine to older version temporarily
+* Fix [CB-7069](https://issues.apache.org/jira/browse/CB-7069) copy-from &#x26; link-to custom uri -&#x3e; url
+* [CB-7002](https://issues.apache.org/jira/browse/CB-7002) Incremented package version to -dev
+
+### 3.5.0-0.2.6 ()
+* [CB-6976](https://issues.apache.org/jira/browse/CB-6976) Add support for Windows Universal apps (Windows 8.1 and WP 8.1)
+...</pre></li>
     </ul>
 
 
@@ -3094,16 +3151,22 @@ cordova_lib.binname);
     return emit.apply(this, args);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-           return f;
+            throw new CordovaError(msg);
         }
-        return null;
-    }).filter(function (f) {
-        return f !== null;
-    });
-    raw = fs.readFileSync(file[0]).toString(&#x27;utf8&#x27;).replace(/cordova-cli/g, cordova_lib.binname);
-    cordova.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;results&#x27;, raw);
-    return Q();
-};
+
+        return cordova.raw[cmd].call(null, opts.platforms)
+            .then(function(platformChecks) {
+
+                var someChecksFailed = Object.keys(platformChecks).map(function(platformName) {
+events.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;log&#x27;, &#x27;\nRequirements check results for &#x27; + platformName
+ + &#x27;:&#x27;);
+var platformCheck = platformChecks[platformName];
+if (platformCheck instanceof CordovaError) {
+    events.emit(&#x27;warn&#x27;, &#x27;Check failed for &#x27; + platformName + &#x27; due to &#x27; + platformCheck);
+    return true;
+}
+
+var someChecksFailed = false;
 ...</pre></li>
     </ul>
 
@@ -3178,7 +3241,23 @@ cordova_lib.binname);
     var insightOptOut = insight.optOut === undefined;
     return !(insightOptOut);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Also, if the user has already been prompted and made a decision, use his saved answer
+ */
+if(isTelemetryCmd) {
+    var isOptedIn = telemetry.isOptedIn();
+    return handleTelemetryCmd(subcommand, isOptedIn);
+}
+
+if(telemetry.<span class="apidocCodeKeywordSpan">hasUserOptedInOrOut</span>()) {
+    return Q(telemetry.isOptedIn());
+}
+
+/**
+ * Otherwise, prompt user to opt-in or out
+ * Note: the prompt is shown for 30 seconds. If no choice is made by that time, User is considered to have opted out.
+ */
+...</pre></li>
     </ul>
 
 
@@ -3193,7 +3272,23 @@ cordova_lib.binname);
     <li>description and source-code<pre class="apidocCodePre">function isCI(env) {
     return !!env.CI;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Skip telemetry prompt if:
+ * - CI environment variable is present
+ * - Command is run with `--no-telemetry` flag
+ * - Command ran is: `cordova telemetry on | off | ...`
+ */
+
+if(telemetry.<span class="apidocCodeKeywordSpan">isCI</span>(process.env) || telemetry.isNoTelemetryFlag(inputArgs)) {
+    return Q(false);
+}
+
+/**
+ * We shouldn&#x27;t prompt for telemetry if user issues a command of the form: `cordova telemetry on | off | ...x`
+ * Also, if the user has already been prompted and made a decision, use his saved answer
+ */
+...</pre></li>
     </ul>
 
 
@@ -3208,7 +3303,23 @@ cordova_lib.binname);
     <li>description and source-code<pre class="apidocCodePre">function isNoTelemetryFlag(args) {
     return args.indexOf(&#x27;--no-telemetry&#x27;) &#x3e; -1;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Skip telemetry prompt if:
+ * - CI environment variable is present
+ * - Command is run with `--no-telemetry` flag
+ * - Command ran is: `cordova telemetry on | off | ...`
+ */
+
+if(telemetry.isCI(process.env) || telemetry.<span class="apidocCodeKeywordSpan">isNoTelemetryFlag</span>(inputArgs)) {
+    return Q(false);
+}
+
+/**
+ * We shouldn&#x27;t prompt for telemetry if user issues a command of the form: `cordova telemetry on | off | ...x`
+ * Also, if the user has already been prompted and made a decision, use his saved answer
+ */
+...</pre></li>
     </ul>
 
 
@@ -3223,7 +3334,22 @@ cordova_lib.binname);
     <li>description and source-code<pre class="apidocCodePre">function isOptedIn() {
     return !insight.optOut;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+/**
+ * We shouldn&#x27;t prompt for telemetry if user issues a command of the form: `cordova telemetry on | off | ...x`
+ * Also, if the user has already been prompted and made a decision, use his saved answer
+ */
+if(isTelemetryCmd) {
+    var isOptedIn = telemetry.<span class="apidocCodeKeywordSpan">isOptedIn</span>();
+    return handleTelemetryCmd(subcommand, isOptedIn);
+}
+
+if(telemetry.hasUserOptedInOrOut()) {
+    return Q(telemetry.isOptedIn());
+}
+...</pre></li>
     </ul>
 
 
@@ -3256,7 +3382,23 @@ cordova_lib.binname);
 
     return deferred.promise;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return Q(telemetry.isOptedIn());
+    }
+
+    /**
+     * Otherwise, prompt user to opt-in or out
+     * Note: the prompt is shown for 30 seconds. If no choice is made by that time, User is considered to have opted out.
+     */
+    return telemetry.<span class="apidocCodeKeywordSpan">showPrompt</span>();
+}).then(function (collectTelemetry) {
+    shouldCollectTelemetry = collectTelemetry;
+    if(isTelemetryCmd) {
+        return Q();
+    }
+    return cli(inputArgs);
+}).then(function () {
+...</pre></li>
     </ul>
 
 
@@ -3278,7 +3420,23 @@ cordova_lib.binname);
     }
     insight.track.apply(insight, arguments);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    shouldCollectTelemetry = collectTelemetry;
+    if(isTelemetryCmd) {
+        return Q();
+    }
+    return cli(inputArgs);
+}).then(function () {
+    if (shouldCollectTelemetry &#x26;&#x26; !isTelemetryCmd) {
+        telemetry.<span class="apidocCodeKeywordSpan">track</span>(cmd, subcommand, &#x27;successful&#x27;);
+    }
+    // call cb with error as arg if something failed
+    cb(null);
+}).fail(function (err) {
+    if (shouldCollectTelemetry &#x26;&#x26; !isTelemetryCmd) {
+        telemetry.track(cmd, subcommand, &#x27;unsuccessful&#x27;);
+    }
+...</pre></li>
     </ul>
 
 
@@ -3293,7 +3451,23 @@ cordova_lib.binname);
     <li>description and source-code<pre class="apidocCodePre">function turnOff() {
     insight.optOut = true;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// turn telemetry on or off
+try {
+    if (turnOn) {
+        telemetry.turnOn();
+        console.log(&#x27;Thanks for opting into telemetry to help us improve cordova.&#x27;);
+    } else {
+        telemetry.<span class="apidocCodeKeywordSpan">turnOff</span>();
+        console.log(&#x27;You have been opted out of telemetry. To change this, run: cordova telemetry on.&#x27;);
+    }
+} catch (ex) {
+    cmdSuccess = false;
+}
+
+// track or not track ?, that is the question
+...</pre></li>
     </ul>
 
 
@@ -3308,7 +3482,23 @@ cordova_lib.binname);
     <li>description and source-code<pre class="apidocCodePre">function turnOn() {
     insight.optOut = false;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var turnOn = subcommand === &#x27;on&#x27; ? true : false;
+var cmdSuccess = true;
+
+// turn telemetry on or off
+try {
+    if (turnOn) {
+        telemetry.<span class="apidocCodeKeywordSpan">turnOn</span>();
+        console.log(&#x27;Thanks for opting into telemetry to help us improve cordova.&#x27;);
+    } else {
+        telemetry.turnOff();
+        console.log(&#x27;You have been opted out of telemetry. To change this, run: cordova telemetry on.&#x27;);
+    }
+} catch (ex) {
+    cmdSuccess = false;
+...</pre></li>
     </ul>
 
 
