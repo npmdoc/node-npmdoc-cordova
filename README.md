@@ -1,6 +1,6 @@
 # npmdoc-cordova
 
-#### api documentation for  cordova (v6.5.0)  [![npm package](https://img.shields.io/npm/v/npmdoc-cordova.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cordova) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cordova.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cordova)
+#### basic api documentation for  cordova (v6.5.0)  [![npm package](https://img.shields.io/npm/v/npmdoc-cordova.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cordova) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cordova.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cordova)
 
 #### Cordova command line interface tool
 
